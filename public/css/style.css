@@ -346,6 +346,12 @@ a {
   #logo {
     width: 200px;
   }
+  .image-result {
+    width: 100%;
+  }
+  #imageOutput img {
+    max-width: 100% !important;
+  }  
 }
 
 
