@@ -42,7 +42,14 @@ document.getElementById('sendButton').addEventListener('click', async function()
           imgElement.src = data.imageUrl
           imgElement.className = "img-fluid image-result img-thumbnail m-2"
           document.getElementById('imageOutput').prepend(imgElement)
-      } else {
+
+          // TODO Aca tengo el conteo, decidir que hacer con esto
+          document.getElementById('textOutput').textContent = data.updatedCount
+      } else if(data.status == 'error' & data.reason == 'no_subscription') {
+        // Lo mandamos a subscribirse
+        window.location.href = '/subscription.html'
+      }
+      else {
           document.getElementById('textOutput').textContent = 'Error o estado no exitoso: ' + data.status
       }
   })

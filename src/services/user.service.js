@@ -3,7 +3,7 @@ const admin = require('firebase-admin')
 
 async function checkUserExists(uid) {
   let user = await User.findOne({ uid })
-  return user;
+  return user
 }
 
 async function registerNewUser({ email, uid }) {

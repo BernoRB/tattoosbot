@@ -16,6 +16,24 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  countGenerations: {
+    type: Number,
+    default: 0
+  },
+  isPremium: {
+    type: Boolean,
+    default: false
+  },
+  isPremiumSince: {
+    type: Date
+  },
+  isPremiumUntil: {
+    type: Date
+  },
+  quantitySubscriptions: {
+    type: Number,
+    default: 0
+  }
 }, { timestamps: true }) // esto pone el createdAt y updatedAt
 
 const User = mongoose.model('User', userSchema)
